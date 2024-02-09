@@ -30,17 +30,16 @@ gallery.addEventListener("click", (event) => {
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  const instance = basicLightbox.create(`
-    <img src= "${event.target.dataset.source}"></img>`, {
-    onShow: window.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        instance.close();
-      }
-    })
-})
+  const instance = basicLightbox.create(
+    `<img src= "${event.target.dataset.source}"></img>`,
+    {
+      onShow: window.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          instance.close();
+        }
+      }),
+    }
+  );
 
   instance.show();
 });
-
-
-
